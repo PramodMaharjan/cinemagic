@@ -1,0 +1,31 @@
+@import '../../../mixins.scss';
+
+.searchResults {
+    min-height: 700px;
+    padding-top: 100px;
+
+    .searchTitle {
+        font-size: 24px;
+        line-height: 34px;
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    .content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+
+        @include md {
+            gap: 20px;
+        }
+
+        .spinner {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.switchTabs {
+    background-color: white;
+    height: 30px;
+    border-radius: 25px;
+    padding: 2px;
+
+    .tabItems {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 26px;
+
+        .tabItem {
+            position: relative;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: color ease 0.4s;
+            z-index: 1;
+            height: 100%;
+            color: var(--grey);
+
+            &.active {
+                color: white;
+            }
+        }
+
+        .bgEffect {
+            width: 100px;
+            height: 26px;
+            border-radius: 20px;
+            position: absolute;
+            background-color: var(--orange);
+            transition: ease 0.4s;
+        }
+    }
+
+}

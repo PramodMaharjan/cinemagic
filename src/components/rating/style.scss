@@ -1,0 +1,19 @@
+@import '../../mixins.scss';
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: var(--grey);
+    background-color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    @include md {
+        height: 35px;
+        width: 35px;
+    }
+}

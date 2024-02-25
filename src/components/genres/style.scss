@@ -1,0 +1,15 @@
+.carouselGenres {
+    display: flex;
+    gap: 10px;
+
+    .carouselGenre {
+        padding: 3px 5px;
+        color: var(--grey);
+        font-weight: 500;
+        background-color: var(--orange);
+        border-radius: 3px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+}

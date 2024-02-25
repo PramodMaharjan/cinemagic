@@ -1,0 +1,54 @@
+@import '../../mixins.scss';
+
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: #0c0c0c;
+    color: #fffc;
+    display: flex;
+    align-items: center;
+
+    .mainItems {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 15px;
+
+        @include md {
+            margin-bottom: 30px;
+            gap: 30px;
+        }
+
+        .mainItem {
+            transition: all ease 0.5s;
+            cursor: pointer;
+            font-size: 12px;
+
+            @include md {
+                font-size: 1rem;
+            }
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    .footer-icon {
+        transition: all ease 0.5s;
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+        }
+    }
+}

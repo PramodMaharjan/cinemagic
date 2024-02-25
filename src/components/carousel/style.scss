@@ -1,0 +1,191 @@
+@import '../../mixins.scss';
+
+.carouselContent {
+    margin: 50px 0px;
+
+    .carouselTitle {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    .contentWrapper {
+        position: relative;
+    }
+
+    .arrow {
+        z-index: 1;
+        position: absolute;
+        top: 40%;
+        font-size: 2rem;
+        color: black;
+        opacity: 0.6;
+        cursor: pointer;
+        display: none;
+
+        // transform: translateY(-50%);
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @include md {
+            display: block;
+        }
+    }
+
+    .moveLeft {
+        left: 30px;
+
+    }
+
+    .moveRight {
+        Right: 30px;
+
+    }
+
+    .loadingSkeleton {
+        display: flex;
+        gap: 10px;
+        overflow-y: hidden;
+
+        @include md {
+            gap: 20px;
+        }
+
+        .skeletonItem {
+            width: 125px;
+            flex-shrink: 0;
+
+            @include md {
+                width: calc(25% - 15px);
+            }
+
+            @include lg {
+                width: calc(20% - 16px);
+            }
+
+            .carouselPoster {
+                border-radius: 12px;
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1 / 1.5;
+            }
+
+            .carouselText {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+
+                .title {
+                    width: 100%;
+                    height: 20px;
+                    margin-bottom: 4px;
+                }
+
+                .date {
+                    width: 50%;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .carouselItems {
+        display: flex;
+        gap: 10px;
+        overflow-y: hidden;
+
+        @include md {
+            gap: 20px;
+        }
+
+        .carouselItem {
+            position: relative;
+            flex-shrink: 0;
+            width: 125px;
+            cursor: pointer;
+            // background-color: #3f4245;
+            // aspect-ratio: 1/2;
+
+            @include md {
+                width: calc(25% - 15px);
+                // aspect-ratio: 1/1.8;
+            }
+
+            @include lg {
+                width: calc(20% - 16px);
+                aspect-ratio: 1/1.8;
+            }
+
+            .carouselPoster {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1/1.5;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                padding: 10px;
+
+                .lazy-load-image-background {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .rating {
+                    position: absolute;
+                    top: 6px;
+                    left: 6px;
+                }
+
+                .carouselGenres {
+                    position: relative;
+                    display: none;
+
+                    @include md {
+                        display: flex;
+                        flex-flow: wrap;
+                        justify-content: flex-end;
+                    }
+                }
+
+            }
+
+            .carouselText {
+                display: flex;
+                flex-direction: column;
+                color: white;
+                padding: 10px;
+
+                .title {
+                    font-size: 0.9rem;
+                    margin-bottom: 4px;
+
+                    @include md {
+                        font-size: 1rem;
+                    }
+                }
+
+                .date {
+                    color: #868c96;
+                    font-size: 0.8rem;
+
+                    @include md {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}

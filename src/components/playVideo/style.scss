@@ -1,0 +1,60 @@
+.videoPopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+
+    .opacityLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(3.5px);
+        opacity: 0;
+        transition: opacity 400ms;
+    }
+
+    .videoPlayer {
+        width: 800px;
+        aspect-ratio: 16 / 9;
+        position: relative;
+        background-color: white;
+
+        transform: scale(0.2);
+        transition: transform 250ms;
+
+        .close {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            color: #fffc;
+            cursor: pointer;
+            font-size: 1.2rem;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+
+        .opacityLayer {
+            opacity: 1;
+        }
+
+        .videoPlayer {
+            transform: scale(1);
+        }
+    }
+}

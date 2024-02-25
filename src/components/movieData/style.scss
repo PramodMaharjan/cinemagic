@@ -1,0 +1,88 @@
+@import '../../mixins.scss';
+
+.searchedItem {
+    width: calc(50% - 5px);
+    margin-bottom: 25px;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    @include md {
+        width: calc(25% - 15px);
+    }
+
+    @include lg {
+        width: calc(20% - 16px);
+    }
+
+    .poster {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1.5;
+        margin-bottom: 20px;
+        transition: all ease 0.5s;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 10px;
+
+        .lazy-load-image-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .rating {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+        }
+
+        .carouselGenres {
+            position: relative;
+            display: none;
+
+            @include md {
+                display: flex;
+                flex-flow: wrap;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .textContent {
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 24px;
+
+            @include md {
+                font-size: 20px;
+            }
+        }
+
+        .date {
+            font-size: 14px;
+            opacity: 0.5;
+        }
+    }
+
+    &:hover {
+        .poster {
+            opacity: 0.5;
+        }
+    }
+}

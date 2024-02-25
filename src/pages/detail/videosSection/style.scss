@@ -1,0 +1,123 @@
+@import '../../../mixins.scss';
+
+.videosSection {
+    position: relative;
+    margin-bottom: 50px;
+
+    .title {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 25px;
+    }
+
+    .videos {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 0 20px;
+
+        @include md {
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        .video {
+            width: 150px;
+            cursor: pointer;
+            flex-shrink: 0;
+
+            @include md {
+                width: 23.7%;
+            }
+
+            .thumbnail {
+                margin-bottom: 15px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    // display: block;
+                    border-radius: 12px;
+
+                }
+
+                .playIcon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    color: white;
+                    font-size: 2rem;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:hover {
+                    opacity: 0.6;
+                    transition: all 0.3s ease-in-out;
+
+                    .playIcon {
+                        color: var(--orange);
+                    }
+                }
+            }
+
+
+            .videoTitle {
+                color: white;
+                font-size: 14px;
+                line-height: 20px;
+
+                @include md {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+    .loadingSkeleton {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 0 20px;
+
+        @include md {
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        .skItems {
+            width: 150px;
+            flex-shrink: 0;
+
+            @include md {
+                width: 23.7%;
+            }
+
+            .skVideo {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border-radius: 12px;
+                margin-bottom: 10px;
+            }
+
+            .firstRow {
+                width: 100%;
+                height: 20px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+
+            .secondRow {
+                width: 75%;
+                height: 20px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
