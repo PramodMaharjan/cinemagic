@@ -1,6 +1,6 @@
 # Live Demo
 
-https://cinemagic-three.vercel.app/tv/206586
+https://cinemagic-three.vercel.app/
 
 # React + Vite
 
